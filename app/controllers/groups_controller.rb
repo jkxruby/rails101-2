@@ -7,6 +7,7 @@ end
 
 def show
   @group = Group.find(params[:id])
+  @posts = @group.posts
 end
 
 def edit
@@ -40,7 +41,7 @@ def update
   end
 
   def destroy
-    
+
     @group.destroy
     flash[:alert] = "group deleted"
     redirect_to groups_path
